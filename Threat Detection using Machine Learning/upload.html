@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            margin: 0;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        input[type=file] {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        input[type=submit] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload your dataset</h1>
+    <form action="/dashboard" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv">
+        <br>
+        <input type="submit" value="Analyze Dataset">
+    </form>
+</body>
+</html>

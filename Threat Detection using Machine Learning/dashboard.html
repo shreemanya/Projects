@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 40px 0;
+            color: #495057;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #000000;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 30px;
+            text-align: center;
+            color: #6c757d;
+        }
+        p, pre {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        pre {
+            white-space: pre-wrap;       /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            overflow-x: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .stats-container > div {
+            flex: 1;
+            min-width: 300px;
+        }
+        .image-container {
+            text-align: center;
+            padding: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Dashboard</h1>
+
+        <div class="stats-container">
+            <div>
+                <h2>Accuracy Score</h2>
+                <p>{{ accuracy }}</p>
+            </div>
+
+            <div>
+                <h2>Classification Report</h2>
+                <pre>{{ class_report }}</pre>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <h2>Feature Distributions</h2>
+            <img src="data:image/png;base64,{{ histograms }}">
+        </div>
+
+    </div>
+</body>
+</html>
